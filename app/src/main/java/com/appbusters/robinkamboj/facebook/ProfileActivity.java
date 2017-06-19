@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -41,13 +42,24 @@ public class ProfileActivity extends AppCompatActivity{
                                             .load(profilePicUrl)
                                             .into((CircleImageView) findViewById(R.id.profile_image));
 
-                                    String firstName = data.getString("first_name");
-                                    String lastName = data.getString("last_name");
-                                    String gender = data.getString("gender");
+                                    final String firstName = data.getString("first_name");
+                                    final String lastName = data.getString("last_name");
+                                    final String gender = data.getString("gender");
 
-                                    String name = firstName+lastName;
-                                    ((TextView) findViewById(R.id.name)).setText(name);
-                                    ((TextView) findViewById(R.id.gender)).setText(gender);
+
+
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Log.e("Login" + "FirstName", firstName);
+                                            Log.e("Login" + "LastName", lastName);
+                                            Log.e("Login" + "Gender", gender);
+
+                                            String name = firstName+lastName;
+                                            ((TextView) findViewById(R.id.name)).setText(name);
+                                            ((TextView) findViewById(R.id.gender)).setText(gender);
+                                        }
+                                    });
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
