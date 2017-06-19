@@ -36,30 +36,21 @@ public class ProfileActivity extends AppCompatActivity{
 
                                 if (data.has("picture")) {
                                     String profilePicUrl = data.getJSONObject("picture").getJSONObject("data").getString("url");
-//                                    Bitmap profilePic= BitmapFactory.decodeStream(profilePicUrl.openConnection().getInputStream());
-//                                    mImageView.setBitmap(profilePic);
+                                    Log.e("URL", profilePicUrl);
+
                                     Glide.with(ProfileActivity.this)
                                             .load(profilePicUrl)
                                             .into((CircleImageView) findViewById(R.id.profile_image));
 
-                                    final String firstName = data.getString("first_name");
-                                    final String lastName = data.getString("last_name");
-                                    final String gender = data.getString("gender");
+                                }
+                                if(data.has("name")){
+                                    Log.e("Login" + "name", data.getString("name"));
+                                    ((TextView) findViewById(R.id.name)).setText(data.getString("name"));
+                                }
+                                if(data.has("gender")){
+                                    Log.e("Login" + "Gender", data.getString("gender"));
+                                    ((TextView) findViewById(R.id.gender)).setText(data.getString("gender"));
 
-
-
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Log.e("Login" + "FirstName", firstName);
-                                            Log.e("Login" + "LastName", lastName);
-                                            Log.e("Login" + "Gender", gender);
-
-                                            String name = firstName+lastName;
-                                            ((TextView) findViewById(R.id.name)).setText(name);
-                                            ((TextView) findViewById(R.id.gender)).setText(gender);
-                                        }
-                                    });
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
