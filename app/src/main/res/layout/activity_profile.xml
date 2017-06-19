@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="5sp"
-            app:cardElevation="5sp"
+            app:cardElevation="2sp"
             app:cardCornerRadius="5sp">
 
             <LinearLayout
@@ -84,13 +84,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/radioGroup">
+                    android:id="@+id/rgusertype">
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Standard User"
-                        android:id="@+id/radioButton"
+                        android:id="@+id/standard"
                         android:layout_weight="1"
                         android:checked="true"
                         android:textSize="15sp" />
@@ -98,9 +98,9 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Female"
+                        android:text="guru"
                         android:layout_weight="1"
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/guru"
                         android:checked="false"
                         android:textSize="15sp"/>
                 </RadioGroup>
