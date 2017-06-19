@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "791497803464",
+    "firebase_url": "https://fbsdk-7c5cb.firebaseio.com",
+    "project_id": "fbsdk-7c5cb",
+    "storage_bucket": "fbsdk-7c5cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791497803464:android:47a9ef6b7b3af54c",
+        "android_client_info": {
+          "package_name": "com.appbusters.robinkamboj.facebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791497803464-lgh0i59o7p9k6skkkm98s9hg7il6nq98.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appbusters.robinkamboj.facebook",
+            "certificate_hash": "dbea9757a5f8bb23907d231c9311d2219ce758af"
+          }
+        },
+        {
+          "client_id": "791497803464-q7s25cpcdci257kbhrqmndjk4ju16qck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARrTBTqO-PPRBsm7cycW6Ucsx0Ptiwc4Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791497803464-q7s25cpcdci257kbhrqmndjk4ju16qck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
