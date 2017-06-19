@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            Toast.makeText(MainActivity.this, "Authentication Successful.",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
