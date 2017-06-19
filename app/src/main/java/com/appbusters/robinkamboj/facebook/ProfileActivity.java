@@ -49,15 +49,6 @@ public class ProfileActivity extends AppCompatActivity{
                             try {
                                 JSONObject data = response.getJSONObject();
 
-                                if (data.has("picture")) {
-                                    String profilePicUrl = data.getJSONObject("picture").getJSONObject("data").getString("url");
-                                    Log.e("URL", profilePicUrl);
-
-                                    Glide.with(ProfileActivity.this)
-                                            .load(profilePicUrl)
-                                            .into((CircleImageView) findViewById(R.id.profile_image));
-
-                                }
                                 if(data.has("name")){
                                     Log.e("Login" + "name", data.getString("name"));
                                     ((TextView) findViewById(R.id.name)).setText(data.getString("name"));
@@ -65,7 +56,17 @@ public class ProfileActivity extends AppCompatActivity{
                                 if(data.has("gender")){
                                     Log.e("Login" + "Gender", data.getString("gender"));
                                     ((TextView) findViewById(R.id.gender)).setText(data.getString("gender"));
+                                }
+                                if(data.has("id")){
+                                    String id = data.getString("id");
+                                    Log.e("Login" + "Id", id);
+                                    ((TextView) findViewById(R.id.id)).setText(id);
 
+                                    String profilePicUrl = "http://graph.facebook.com/" + id + "/picture?type=large";
+
+                                    Glide.with(ProfileActivity.this)
+                                            .load(profilePicUrl)
+                                            .into((CircleImageView) findViewById(R.id.profile_image));
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
